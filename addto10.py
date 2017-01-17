@@ -6,8 +6,10 @@ from datetime import datetime
 import sys
 
 idx=0
-score=1200
+score=1870
 wrong=0
+#the sum
+c=11
 
 start_time = datetime.now()
 
@@ -15,10 +17,9 @@ while idx<100:
 
     start_problem = time.time()
     idx+=1
-    c=10
     a=range(0,10)
     x=random.choice(a)
-    print "{0} => what's the answer of: {1} + ? == 10".format(idx,x)
+    print "{0} => what's the answer of: {1} + ? == {2}".format(idx,x,c)
     print "_____________________________________________"
 
     raw_num=raw_input("your answer:")
@@ -42,7 +43,7 @@ while idx<100:
             call(["say", msg])
             sdiff=time.time() - start_problem
             print "it took {0} seconds".format(sdiff)
-            if sdiff > 4:
+            if sdiff > 10:
                 slow_msg="too slow this time, penalty 5 points"
                 call(["say", slow_msg])
                 score-=5
